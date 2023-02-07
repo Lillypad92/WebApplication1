@@ -1,4 +1,23 @@
 ﻿@page
 @model WebApplication1.Pages.AnimalsModel
 @{
+    ViewData["Title"] = "Animals";
 }
+<!--Here is the layout for the animals page-->
+
+@foreach(var animal in Model.Animals)
+{
+    <div class="photo-card">
+        <img src="@animal.ImageSrc" />
+        <div class="">
+            <p>@animal.Name</p>
+        </div>
+    </div>
+}
+
+@*<div class="photo-card">
+    <img src="images/computer-code.jpg" />
+    <div class="">
+        <p>Blåsfisk | Tetraodonitidae</p>
+    </div>
+</div>*@
