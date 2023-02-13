@@ -7,6 +7,8 @@ namespace WebApplication1.Pages
     {
         public string ImageSrc { get; set; }
         public string Name { get; set; }
+        public int Age { get; set; }
+
     }
 
     public class AnimalsModel : PageModel
@@ -18,10 +20,12 @@ namespace WebApplication1.Pages
         {
             Animals = new List<Animal>()
             {
-                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Blåsfisk"},
-                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Katt"},
-                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Hund"},
-                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Mask"}
+                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Blåsfisk", Age = 1},
+                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Katt", Age = 2},
+                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Hund", Age = 3},
+                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Mask", Age = 4},
+                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Blåmes", Age = 5},
+                new Animal{ImageSrc = "images/computer-code.jpg", Name = "Kråka", Age = 6}
             };
         }
 
@@ -30,3 +34,5 @@ namespace WebApplication1.Pages
         }
     }
 }
+
+CacheProfile#
