@@ -5,29 +5,45 @@
 }
 <!--Here is the layout for the animals page-->
 
+<h1>Animals page</h1>
+
 @foreach(var animal in Model.Animals)
 {
-    <div class="photo-card">
-        <img src="@animal.ImageSrc" />
-        <div class="">
-            <p>@animal.Name</p>
+    <div class="container-animals">
+        <div class="row">
+            <div class="column">
+                <div class="img-thumbnail">
+                    <img src="@animal.ImageSrc" class="rounded " />
+                    <p class="card-text">@animal.Name</p>
+                    <p class="card-text">Ålder: @animal.Age</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="img-thumbnail">
+                    <img src="@animal.ImageSrc" class="rounded " />
+                    <p class="card-text">@animal.Name</p>
+                    <p class="card-text">Ålder: @animal.Age</p>
+                </div>
+            </div>
+             <div class="column">
+                <div class="img-thumbnail">
+                    <img src="@animal.ImageSrc" class="rounded " />
+                    <p class="card-text">@animal.Name</p>
+                    <p class="card-text">Ålder: @animal.Age</p>
+                </div>
+            </div>
+            
         </div>
-        <p>Ålder: @animal.Age</p>
-    </div>
+     </div>
+          
 }
 
-@*@for(var i = 0; i < 10; i++)
-{
+@*for(var i = 0; i < 10; i++)
+{S
     <div class="photo-card">
     <img src = "images/computer-code.jpg" />
     < div class="">
-        <p>Sandra antal @i</p>
+        <p>Sandra antal</p>
     </div>
-}*@
+};*@
 
-@*<div class="photo-card">
-    <img src="images/computer-code.jpg" />
-    <div class="">
-        <p>Blåsfisk | Tetraodonitidae</p>
-    </div>
-</div>*@

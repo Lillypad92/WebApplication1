@@ -20,8 +20,54 @@ html {
 body {
   margin-bottom: 60px;
 }
-icon-footer {
-    float:right;
+
+.row {
+    display:flex;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.row::after {
+    content:"";
+    clear:both;
+    display:table;
+}
+
+img {
+    width: 100%;
+}
+
+.img-thumbnail {
+    text-align:center;
+}
+
+.col1 {
+    border: dotted;
+    /* float:left;*/
+}
+.col2 {
+    /*border:solid;*/
+    text-align:center;
+    
+}
+.col3{
+    border:dashed;
+  /*  display:inline-block;*/
+}
+.row2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*color:aqua;*/
+    /*border:solid;*/
+    font-size:larger;
+    display:flex;
+   /* padding:10px 10px 10px 10px;
+    margin:10px 100px 15px 10px;*/
+
+
 }
 
 
