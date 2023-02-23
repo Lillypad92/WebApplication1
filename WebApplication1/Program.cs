@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WebApplication1.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages()
+    .AddRazorRuntimeCompilation();
+builder.Services.AddDbContext<AnimalContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AnimalContext") ?? throw new InvalidOperationException("Connection string 'AnimalContext' not found.")));
 
 var app = builder.Build();
 

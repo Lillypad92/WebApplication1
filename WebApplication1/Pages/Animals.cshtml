@@ -1,49 +1,89 @@
 ﻿@page
+@using WebApplication1.Models;
 @model WebApplication1.Pages.AnimalsModel
 @{
     ViewData["Title"] = "Animals";
 }
+
 <!--Here is the layout for the animals page-->
 
 <h1>Animals page</h1>
 
-@foreach(var animal in Model.Animals)
-{
-    <div class="container-animals">
-        <div class="row">
-            <div class="column">
-                <div class="img-thumbnail">
-                    <img src="@animal.ImageSrc" class="rounded " />
-                    <p class="card-text">@animal.Name</p>
-                    <p class="card-text">Ålder: @animal.Age</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="img-thumbnail">
-                    <img src="@animal.ImageSrc" class="rounded " />
-                    <p class="card-text">@animal.Name</p>
-                    <p class="card-text">Ålder: @animal.Age</p>
-                </div>
-            </div>
-             <div class="column">
-                <div class="img-thumbnail">
-                    <img src="@animal.ImageSrc" class="rounded " />
-                    <p class="card-text">@animal.Name</p>
-                    <p class="card-text">Ålder: @animal.Age</p>
-                </div>
-            </div>
-            
-        </div>
-     </div>
-          
-}
 
-@*for(var i = 0; i < 10; i++)
-{S
-    <div class="photo-card">
-    <img src = "images/computer-code.jpg" />
-    < div class="">
-        <p>Sandra antal</p>
+<div class="container-animals">
+
+    @if(Model.Animals.Count > 0)
+    {
+        @foreach (var animal in Model.Animals)
+        {
+            <div class="column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="@animal.Image" class="rounded " />
+                            <p class="card-text">@animal.Name</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">@animal.Name</p>
+                            <a asp-page="@animal.Link">Se mer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+        <p>Finns inga djur!</p>
+    }
+
+    
+
+@*    <div class="row">
+        @foreach(var animal in Model.FirstRowOfAnimals)
+        {     
+            <div class="column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="@animal.ImageSrc" class="rounded " />
+                            <p class="card-text">@animal.Name</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">@animal.Name</p>
+                            <p class="card-text">Ålder: @animal.Age</p>
+                            <a asp-page="@animal.Link">Se mer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>                    
+        }
     </div>
-};*@
+    <br />
+    <div class="row">
+        @foreach (var animal in Model.SecondRowOfAnimals)
+        {     
+            <div class="column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="@animal.ImageSrc" />
+                            <p class="card-text">@animal.Name</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">@animal.Name</p>
+                            <p class="card-text">Ålder: @animal.Age</p>
+                            <a asp-page="@animal.Link">Se mer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        }
+    </div>*@
+</div>
+
+
+
 
