@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using WebApplication1.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Data
 {
@@ -14,6 +9,6 @@ namespace WebApplication1.Data
         {
         }
 
-        public DbSet<WebApplication1.Models.Animal> Animal { get; set; } = default!;
+        public DbSet<Models.Animal> Animal { get; set; } = default!;
     }
 }

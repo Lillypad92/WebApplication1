@@ -5,29 +5,57 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Pages.Animals
 {
-    public class TestModel : PageModel
+    public class CreateAnimalModel : PageModel
     {
         private readonly AnimalContext _context;
 
-        public TestModel(AnimalContext context)
+        public List<Animal> Animals { get; set; }
+
+        public CreateAnimalModel(AnimalContext context)
         {
             _context = context;
+
+            Animals = context.Animal.ToList();
         }
 
-        public void OnGet()
+        public void OnPostCreate(string type, string image, string link)
         {
-        }
-
-        public void OnPost(string name, string image, string link)
-        {
-            var animal = new WebApplication1.Models.Animal
+            var animal = new Animal
             {
                 Image = image,
                 Link = link,
-                Name = name,
+                Type = type,
             };
 
             _context.Add(animal);
+            _context.SaveChanges();
+        }
+
+        public IActionResult OnPostGetAnimalData(int id)
+        {
+            var animal = _context.Animal.Find(id);
+
+            return new JsonResult(animal);
+        }
+
+        public void OnPostUpdate(string type, string image, string link, int id)
+        {
+            var animal = _context.Animal.Find(id);
+            if (animal == null) return;
+
+            animal.Image = image;
+            animal.Link = link;
+            animal.Type = type;
+
+            _context.SaveChanges();
+        }
+
+        public void OnPostDelete(int id)
+        {
+            var animal = _context.Animal.Find(id);
+            if (animal == null) return;
+
+            _context.Animal.Remove(animal);
             _context.SaveChanges();
         }
     }

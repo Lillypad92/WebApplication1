@@ -22,10 +22,10 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <img src="@animal.Image" class="rounded " />
-                            <p class="card-text">@animal.Name</p>
+                            <p class="card-text">@animal.Type</p>
                         </div>
                         <div class="flip-card-back">
-                            <p class="card-text">@animal.Name</p>
+                            <p class="card-text">@animal.Type</p>
                             <a asp-page="@animal.Link">Se mer</a>
                         </div>
                     </div>
@@ -38,51 +38,6 @@
     {
         <p>Finns inga djur!</p>
     }
-
-    
-
-@*    <div class="row">
-        @foreach(var animal in Model.FirstRowOfAnimals)
-        {     
-            <div class="column">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="@animal.ImageSrc" class="rounded " />
-                            <p class="card-text">@animal.Name</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <p class="card-text">@animal.Name</p>
-                            <p class="card-text">Ålder: @animal.Age</p>
-                            <a asp-page="@animal.Link">Se mer</a>
-                        </div>
-                    </div>
-                </div>
-            </div>                    
-        }
-    </div>
-    <br />
-    <div class="row">
-        @foreach (var animal in Model.SecondRowOfAnimals)
-        {     
-            <div class="column">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="@animal.ImageSrc" />
-                            <p class="card-text">@animal.Name</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <p class="card-text">@animal.Name</p>
-                            <p class="card-text">Ålder: @animal.Age</p>
-                            <a asp-page="@animal.Link">Se mer</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          
-        }
-    </div>*@
 </div>
 
 
