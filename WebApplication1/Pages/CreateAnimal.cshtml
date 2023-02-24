@@ -1,15 +1,158 @@
 ﻿@page
-@model WebApplication1.Pages.Animals.TestModel
+@model WebApplication1.Pages.Animals.CreateAnimalModel
 
+<h2>Hantera djur</h2>
 
-<div>
-    <form method="post">
-        <label>Namn:</label>
-        <input type="text" name="name"/>
-        <label>Länk</label>
-        <input type="text" name="link" />
-        <label>Bild:</label>
-        <input type="text" name="image"/>
-        <input type="submit"/>
-    </form>
+<script>
+
+    window.addEventListener('load', (event) => {
+        if (document.getElementById("select_animal_update") !== null){
+            document.getElementById("select_animal_update").addEventListener('change', (event) => {
+                getAnimal(event.currentTarget.value);
+            });
+        }
+    });
+
+    function getAnimal(id){
+        $.ajax({
+            type: "POST",
+            url: '?handler=GetAnimalData',
+            headers: {
+                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val(),
+            },
+            data: { "id": id,
+            dataType: "json"}
+        }).done(function(data){
+
+            document.getElementById("animal_update_id").value = data.id;
+            document.getElementById("animal_update_type").value = data.type;
+            document.getElementById("animal_update_link").value = data.link;
+            document.getElementById("animal_update_image").value = data.image;
+
+            $("#form_animal_update").show();
+        });
+    }
+</script>
+
+<div class="accordion" id="container_accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading_createanimal">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#container_createanimal" aria-expanded="false" aria-controls="container_createanimal">
+                Skapa djur
+            </button>
+        </h2>
+        <div id="container_createanimal" class="accordion-collapse collapse" aria-labelledby="heading_createanimal" data-bs-parent="#container_accordion">
+            <div class="accordion-body">
+                <form asp-page-handler="create" method="post">
+                    <div class="mb-3">
+                        <label for="animal_type" class="form-label">Typ</label>
+                        <input class="form-control" id="animal_type" type="text" name="type" aria-describedby="animal_type_description" required />
+                        <div id="animal_type_description" class="form-text">
+                            Vad för typ av djur?(Häst,Räv osv..)
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="animal_link" class="form-label">Länk</label>
+                        <input class="form-control" id="animal_link" type="text" name="link" aria-describedby="animal_link_description" required />
+                        <div id="animal_link_description" class="form-text">
+                            Sökväg till sida för djuret.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="animal_image" class="form-label">Bild</label>
+                        <input class="form-control" id="animal_image" type="text" name="image" aria-describedby="animal_image_description" required />
+                        <div id="animal_image_description" class="form-text">
+                            Sökväg till bild för djuret.
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Skapa</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading_updateanimal">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#container_updateanimal" aria-expanded="false" aria-controls="container_updateanimal">
+                Uppdatera djur
+            </button>
+        </h2>
+        <div id="container_updateanimal" class="accordion-collapse collapse" aria-labelledby="heading_updateanimal" data-bs-parent="#container_accordion">
+            <div class="accordion-body">
+                <div class="accordion-body">
+                    @if (Model.Animals.Count > 0)
+                    {
+                        <select class="form-select form-select-lg mb-3" id="select_animal_update">
+                            <option selected>Välj djur</option>
+                            @foreach (var animal in Model.Animals)
+                            {
+                                <option value="@animal.Id">@animal.Type</option>
+                            }
+                        </select>
+                        <form asp-page-handler="update" method="post" style="display:none;" id="form_animal_update">
+                            <div class="mb-3">
+                                <label for="animal_update_id" class="form-label">Id</label>
+                                <input class="form-control" id="animal_update_id" type="text" name="id" readonly/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="animal_update_type" class="form-label">Typ</label>
+                                <input class="form-control" id="animal_update_type" type="text" name="type" aria-describedby="animal_update_type_description" required />
+                                <div id="animal_update_type_description" class="form-text">
+                                    Vad för typ av djur?(Häst,Räv osv..)
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="animal_update_link" class="form-label">Länk</label>
+                                <input class="form-control" id="animal_update_link" type="text" name="link" aria-describedby="animal_update_link_description" required />
+                                <div id="animal_update_link_description" class="form-text">
+                                    Sökväg till sida för djuret.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="animal_update_image" class="form-label">Bild</label>
+                                <input class="form-control" id="animal_update_image" type="text" name="image" aria-describedby="animal_update_image_description" required />
+                                <div id="animal_update_image_description" class="form-text">
+                                    Sökväg till bild för djuret.
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="Uppdatera" />
+                        </form>
+                    }
+                    else
+                    {
+                        <p>Finns inga djur!</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading_deleteanimal">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#container_deleteanimal" aria-expanded="false" aria-controls="container_deleteanimal">
+                Ta bort djur
+            </button>
+        </h2>
+        <div id="container_deleteanimal" class="accordion-collapse collapse" aria-labelledby="heading_deleteanimal" data-bs-parent="#container_accordion">
+            <div class="accordion-body">
+                @if (Model.Animals.Count > 0)
+                {
+                    <form asp-page-handler="delete" method="post">
+                        <select class="form-select form-select-lg mb-3" name="id">
+                            <option selected>Välj djur</option>
+                            @foreach (var animal in Model.Animals)
+                            {
+                                <option value="@animal.Id">@animal.Type</option>
+                            }
+                        </select>
+                        <input type="submit" class="btn btn-primary" value="Ta bort" />
+                    </form>
+                }
+                else
+                {
+                    <p>Finns inga djur!</p>
+                }
+            </div>
+        </div>
+    </div>
 </div>
+
