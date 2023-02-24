@@ -90,6 +90,17 @@ img:hover {
     color: black;
     transform: rotateY(180deg);
 }
+.display-4 {
+    text-align: center;
+}
+.img-test {
+    border-radius: 70px 70px;
+    width: 550px;
+    margin: 30px 0px 10px -245px;
+}
+.fun-facts {
+    border:groove;
+}
 
 
 
