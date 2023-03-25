@@ -18,7 +18,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    display:flex;
+    flex-direction:column;
 }
 
 .row {
@@ -28,7 +29,7 @@ body {
 .column {
     float: left;
     width: 33.33%;
-    padding: 5px;
+    padding: 10px
 }
 
 .row::after {
@@ -36,21 +37,38 @@ body {
     clear:both;
     display:table;
 }
+.container_test_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image {
+    width: 800px;
+    opacity:revert;
+}
 
 img {
     width: 100%;
 }
 
-/*.card-text {
-    background-color: #04AA6D;
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-}*/
-
 img:hover {
     opacity: 0.7;
 }
+
+.img-test {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+}
+
+figcaption {
+    text-align: center;
+    font-family: 'Shantell Sans', cursive;
+    font-size: x-large;
+}
+
 .flip-card {
     background-color: transparent;
     width: 300px;
@@ -93,14 +111,62 @@ img:hover {
 .display-4 {
     text-align: center;
 }
-.img-test {
-    border-radius: 70px 70px;
-    width: 550px;
-    margin: 30px 0px 10px -245px;
+
+table {
+    border-collapse: collapse;
+    width: 25%
 }
 .fun-facts {
-    border:groove;
+    margin: 25px 0px 25px -145px;
 }
+td, th {
+    border: 1px solid ;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #a1cacd;
+}
+.did_you_know {
+    display: block;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+    background-color: #caf0f8;
+    font-family: 'Shantell Sans', cursive;
+    text-align: center;
+}
+.did_you_know_p {
+    font-size: x-large;
+}
+
+.text {
+    font-size: 19px;
+    padding-left: 20px;
+}
+
+.icons {
+    color:blue;
+    padding: 0px 0px 0px 10px;
+}
+#footer {
+
+}
+#footer, a {
+    text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

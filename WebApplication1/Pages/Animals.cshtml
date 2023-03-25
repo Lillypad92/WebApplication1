@@ -9,14 +9,11 @@
 
 <h1>Djursidan</h1>
 
-
-
-<div class="container-animals">
-
-    @if(Model.Animals.Count > 0)
+@if(Model.Animals.Count > 0)
+{
+    @foreach (var animal in Model.Animals)
     {
-        @foreach (var animal in Model.Animals)
-        {
+        <div class="container-fluid">
             <div class="column">
                 <div class="flip-card">
                     <div class="flip-card-inner">
@@ -31,14 +28,20 @@
                     </div>
                 </div>
             </div>
-        }
+        </div>
+       
+    }
 
-    }
-    else
-    {
-        <p>Finns inga djur!</p>
-    }
-</div>
+}
+else
+{
+    <p>Finns inga djur!</p>
+}
+
+
+
+
+
 
 
 

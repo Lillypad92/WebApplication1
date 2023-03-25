@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="font-awesome-animation.min.css">
     <script src="https://kit.fontawesome.com/3888d8353b.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,10 +29,15 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Animals"><i class="fa-solid fa-kiwi-bird"></i> Djur</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Animals"><i class="fa-solid fa-kiwi-bird"></i> Djur</a>   
                         </li>
                     </ul>
-                    <input type="text" placeholder="Sök.." />
+                </div>
+                <div>
+                    <a class="icons" href="https://github.com/Lillypad92"><i class="fa-brands fa-github fa-beat fa-xl"></i></a>
+                    <a class="icons" href="https://www.linkedin.com/in/linda-forslund-240258161/"><i class="fa-brands fa-linkedin fa-beat fa-xl"></i></a>
+                    
+                    
                 </div>
             </div>
         </nav>
@@ -42,15 +48,50 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - HELLO - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+ 
+
+    <footer id="footer" class="bg-dark text-center text-lg-start text-white">
+        <div class="container p-4">
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Kontakt info</h5>
+                    <ul class="list-unstyled mb-0 ">
+                        <li> <a href="mailto:linda.forslund92@outlook.com" class="text-white" onmouseover="onEnter(this)" onmouseout="onLeaving(this)">
+                                <i id="pappaforslund" class="fa fa-regular fa-envelope fa-xl"></i>Maila mig</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
     </footer>
+
+@*    <footer class="border-top footer text-white text-center">
+        <div>
+            <h4>Animal Kingdom</h4>
+            
+            &copy; 2023 - HELLO - <a asp-area="" asp-page="/Privacy">Privacy</a> 
+            <h6>Kontakta mig:</h6>
+            <p>Maila mig!</p> <a href="mailto:linda.forslund92@outlook.com"><i class="fa-regular fa-envelope fa-beat fa-xl"></i></a>
+            
+        </div>
+    </footer>*@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+      
+
+        //function onEnter(linkElement){
+        //    var iElement = linkElement.querySelector("#pappaforslund");
+        //    iElement.classList.add("fa-beat");
+        //}
+
+        //function onLeaving(linkElement) {
+        //    var iElement = linkElement.querySelector("#pappaforslund");
+        //    iElement.classList.remove("fa-beat");
+        }
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

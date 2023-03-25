@@ -3,27 +3,51 @@
 @{
     ViewData["Title"] = "Hund";
 }
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Indie+Flower&family=Montserrat:wght@100&family=Noto+Serif&family=Shadows+Into+Light&family=Shantell+Sans:ital,wght@1,300&display=swap" 
+    rel="stylesheet">
+</head>
+
+
+
 <h1 class="display-4">Animal Kingdom | Canis lupus familiaris </h1>
 
 <div>
-    <img class="img-test" src="~/images/pug2.png"/>
+    <figure>
+        <img class="img-test" src="~/images/pug2.png" />
+        <figcaption>Mops</figcaption>
+    </figure>
 </div>
 
-<div class="fun-facts">
-    <table>
-        <tr>
-            <th>Djurart</th>
-            <th>Namn</th>
-        </tr>
-        
-        <tr>
-            <td>Pug</td>
-            <td>Black</td>
-        </tr>
-        <tr>
-            <td>Empty</td>
-        </tr>
-    </table>
-    
 
+<!--Kanske hitta bättre namn till klasserna?-->
+<div class="did_you_know">
+    <h2>Visste du?</h2>
+    <p class="did_you_know_p" >
+        Att hundar är en domesticerad underart av vargen. Det finns många olika hundraser, som alla har framavlats utav människan.
+        Exempel på hundraser är mops, schäfer och labrador retriver.
+    </p>
 </div>
+<br />
+
+<div class="container_test_img">
+    <div class="image">
+        <img src="~/images/wolf.jpeg" />
+    </div>
+    <div class="text">
+        <h4>Människans äldsta följeslagare</h4>
+        <p>
+            Hunden var det allra första djuret som domesticerades utav människan för ca 20 000 - 40 000 år sedan,
+            det gick till genom att vargflockarna höll sig nära människan och åt från matrester.
+            Efter varje generation varg som föddes så blev de tamare men också att utseendet började förändras till att likna mer hund.
+            <br />
+            I den yngre stenåldern där man började med jordbruk och boskapsskötsel, började människan också med selektiv avel,
+           med selektiv avel så började hundraserna ta form.
+        </p>
+    </div>
+</div>
+
+
