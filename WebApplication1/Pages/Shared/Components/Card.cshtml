@@ -1,0 +1,20 @@
+﻿@model WebApplication1.Models.Components.Card
+
+<style>
+    .card-title {
+        color: black;
+    }
+</style>
+
+<div class="col">
+    <div class="card h-100">
+        <img src="@Model.ImgSrc" class="card-img-top" alt="@Model.ImgAlt">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">@Model.Description</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-body-secondary">@Model.FooterText</small>
+        </div>
+    </div>
+</div>

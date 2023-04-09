@@ -7,8 +7,7 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Indie+Flower&family=Montserrat:wght@100&family=Noto+Serif&family=Shadows+Into+Light&family=Shantell+Sans:ital,wght@1,300&display=swap" 
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Dosis:wght@200&family=Indie+Flower&family=Montserrat:wght@100&family=Noto+Serif&family=Shadows+Into+Light&family=Shantell+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 
 
@@ -17,21 +16,47 @@
 
 <div>
     <figure>
-        <img class="img-test" src="~/images/pug2.png" />
+        <img class="img-test" src="/images/pug2.png" />
         <figcaption>Mops</figcaption>
     </figure>
 </div>
 
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach(var card in Model.Cards)
+    {
+        @await Html.PartialAsync("~/Pages/Shared/Components/Card.cshtml", card)
+    }
+</div>
+
+
+
+@*<div>
+    <figure>
+        <img class="img-test" src="~/images/shepherd.png/>
+        <figcaption>Schäö</figcaption>
+    </figure>
+</div>*@
+
+
+
+@*<div class="card">
+    <h2>Visste du</h2>
+    <img src="~/images/dog-icon.png" style="width: 200px;" />
+    <h3>Underart av vargen</h3>
+    <p class="did_you_know_p">Att alla hundraser är en domesticerad underart av vargen och som alla har framavlats utav människan!</p>
+
+</div>*@
+
 
 <!--Kanske hitta bättre namn till klasserna?-->
-<div class="did_you_know">
+@*<div class="did_you_know">
     <h2>Visste du?</h2>
     <p class="did_you_know_p" >
         Att hundar är en domesticerad underart av vargen. Det finns många olika hundraser, som alla har framavlats utav människan.
         Exempel på hundraser är mops, schäfer och labrador retriver.
     </p>
 </div>
-<br />
+<br />*@
 
 <div class="container_test_img">
     <div class="image">
@@ -51,3 +76,4 @@
 </div>
 
 
+            

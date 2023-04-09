@@ -12,15 +12,16 @@
     <script src="https://kit.fontawesome.com/3888d8353b.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                 <a class="navbar-brand" asp-area="" asp-page="/Index">| Lillypad projekt | </a>
+                 <a class="navbar-brand" asp-area="" asp-page="/Index">| C# projektet | </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-evenly">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index"><i class="fa-solid fa-house"></i> Hem</a>
@@ -33,31 +34,85 @@
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <a class="icons" href="https://github.com/Lillypad92"><i class="fa-brands fa-github fa-beat fa-xl"></i></a>
-                    <a class="icons" href="https://www.linkedin.com/in/linda-forslund-240258161/"><i class="fa-brands fa-linkedin fa-beat fa-xl"></i></a>
-                    
-                    
+                <div class="container-searchbar">
+                    <form action="/" method="GET" class="form">
+                        <input type="text" placeholder="Sök..."  class="search-field"/>
+                        <button type="submit" class="search-button">
+                            <img src="~/images/search.jpg" />
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
- 
-
     <footer id="footer" class="bg-dark text-center text-lg-start text-white">
         <div class="container p-4">
             <div class="row mt-4">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Kontakt info</h5>
+                    <h5 class="text-uppercase">C# projektet</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <p class="text-white">
+                                I C# projektet håller jag på att bygga upp en hemsida med olika djurarter. Syftet med detta är för att jag ska få en ökad
+                                förståelse i C# programmering, backend och frontend utveckling.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">C# projektet</h5>
                     <ul class="list-unstyled mb-0 ">
-                        <li> <a href="mailto:linda.forslund92@outlook.com" class="text-white" onmouseover="onEnter(this)" onmouseout="onLeaving(this)">
-                                <i id="pappaforslund" class="fa fa-regular fa-envelope fa-xl"></i>Maila mig</a>
+                        <li>
+                            <a asp-page="/Animals" class="text-white">
+                                <i class="fa-solid fa-kiwi-bird fa-xl fa-fw me-2"></i> Djur
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Kontakt info</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a class="text-white">
+                                <i class="fa-solid fa-house fa-xl fa-fw me-2"></i> Åshammar, Gästriklands län
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="mailto:linda.forslund92@outlook.com" class="text-white" onmouseover="onEnter(this)" onmouseout="onLeaving(this)">
+                                <i id="pappaforslund" class="fa fa-regular fa-envelope fa-xl fa-fw me-2"></i> linda.forslund92@outlook.com
+                            </a>
+                        </li>
+                        <li> 
+                            <a class="text-white">
+                                <i class="fa-solid fa-phone fa-xl fa-fw me-2"></i> 070 | 227 06 09
+                              </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Sociala medier</h5>
+                    <ul class="list-unstyled mb-0" id="HELLO">
+                        <li>
+                            <a class="text-white" href="#">
+                                <i class="fa-brands fa-github fa-xl fa-fw me-2"></i> Github
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white" href="https://www.facebook.com/linda.l.godin/">
+                                <i class="fa-brands fa-facebook fa-xl fa-fw me-2"></i> Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white" href="https://www.linkedin.com/in/linda-forslund-240258161/">
+                                <i class="fa-brands fa-linkedin fa-xl fa-fw me-2 "></i> LinkedIn
+                            </a>
                         </li>
                     </ul>
                 </div>

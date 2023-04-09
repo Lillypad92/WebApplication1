@@ -7,6 +7,12 @@
 
 <!--Here is the layout for the animals page-->
 
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Dosis:wght@200&family=Indie+Flower&family=Montserrat:wght@100&family=Noto+Serif&family=Shadows+Into+Light&family=Shantell+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+
 <h1>Djursidan</h1>
 
 @if(Model.Animals.Count > 0)
@@ -18,11 +24,16 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="@animal.Image" class="rounded " />
-                            <p class="card-text">@animal.Type</p>
+                            <img src="@animal.Image" class="rounded"  />
+                            <figure>
+                                <figcaption>
+                                    <p>@animal.Type</p>
+                                </figcaption>
+                            </figure>
+                            
                         </div>
                         <div class="flip-card-back">
-                            <p class="card-text">@animal.Type</p>
+                            <p>@animal.Type</p>
                             <a asp-page="@animal.Link">Se mer</a>
                         </div>
                     </div>
