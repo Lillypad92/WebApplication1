@@ -14,15 +14,15 @@ namespace WebApplication1.Pages.Animals
             {
                 new Card
                 {
-                    Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    Description = "Att alla hundraser är en domesticerad underart av vargen, som alla har framavlats utav människan. ",
                     FooterText = "Last updated 3 mins ago",
-                    ImgSrc = "",
-                    Title = "Card title",
+                    ImgSrc = "/images/dog-icon.png",
+                    Title = "Visste du..",
                     ImgAlt = "Alt text"
                 },
                 new Card
                 {
-                    Description = "Sommaren är kort, det mesta regnar bort.......",
+                    Description = "Sommaren är kort, det mesta regnar bort......",
                     FooterText = "Ledins greatest",
                     ImgSrc = "",
                     Title = "Thomas Ledin",
